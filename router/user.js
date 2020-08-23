@@ -1,8 +1,6 @@
 const express = require('express'); 
 const router = express.Router();
 const mysql = require('../mysql');
-
-
 // 登录接口
 router.post('/login',(req,res,next) => {
     if(!req.body) { 
