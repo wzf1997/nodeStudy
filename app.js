@@ -48,5 +48,5 @@ app.get('/api/getMock',  (req,res, next)=>{
 })
 // 注册路由
 app.use('/user',userRooter);
-app.use(express.static("public",options))
+
 app.listen(3030)
