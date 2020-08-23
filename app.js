@@ -3,10 +3,9 @@ let app = express();
 let bodyParser = require('body-parser');
 const userRooter = require('./router/user');
 
-// 解析application/json
-app.use(bodyParser.json());
-// 解析 application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 app.get('/list', function(req, res, next) {
   
