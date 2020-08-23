@@ -1,27 +1,20 @@
-let express=require("express")
-const crypto = require('crypto');
-const hash = crypto.createHash("md5");
+let express=require("express");
+let app = express();
+let bodyParser = require('body-parser');
+const userRooter = require('./router/user');
 
-hash.update('Hello, world! ');
-hash.update('Hello, nodejs!');
-var router = express.Router();
-let app = express()
+// 解析application/json
+app.use(bodyParser.json());
+// 解析 application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded());
 
-let options = {
-  etag: false, // 禁用协商缓存
-  lastModified: false, // 禁用协商缓存
-  setHeaders:(res,path,stat) => {
-    res.set({
-      'Cache-Control':'max-age=10',
-      'ETag': hash
-    });
-  }
-}
 app.get('/list', function(req, res, next) {
   
   res.send([...Array(100).keys()]);
   next();
 });
+
+
 app.get('/api/getMock',  (req,res, next)=>{
   res.setHeader('Cache-Control', 'public, max-age=10000');
 
@@ -53,5 +46,7 @@ app.get('/api/getMock',  (req,res, next)=>{
     });
     next();
 })
+// 注册路由
+app.use('/user',userRooter);
 app.use(express.static("public",options))
 app.listen(3030)
