@@ -21,4 +21,21 @@ router.post('/login',(req,res,next) => {
     }
     
 })
+
+// 注册接口 
+router.get('/register',(req,res,next) => {
+    const { name, password } = req.query;
+    let sql = `INSERT INTO user values('${name}','${password}')` 
+    mysql.query(sql,(err,result) =>{
+        if(err){
+            res.send('插入失败')
+        }else {
+            res.send({
+                status:200,
+                data:'插入成功',
+            })
+        }
+    })
+
+})
 module.exports = router;
