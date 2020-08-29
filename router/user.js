@@ -1,41 +1,41 @@
 const express = require('express'); 
 const router = express.Router();
-const mysql = require('../mysql');
+const util = require('../utils');
+// 用户唯一标识的id
+const uuid  = require('node-uuid');
+// 密码加密级别 
+let bcrypt = require('bcryptjs');
+let salt = bcrypt.genSaltSync(10); // 加密级别
+
+
+
 // 登录接口
-router.post('/login',(req,res,next) => {
+router.post('/login', async (req,res,next) => {
     if(!req.body) { 
         res.send({data:'数据没有填',status:'400'});
     }else {
         const {name,password} = req.body
         let sql =  `select * from user where name = ${name} and password = ${password}`;
-        mysql.query(sql, (err,result) => {
-            if(err){
-                res.send('请先注册')
-            }else {
-                res.send({
-                    status:200, 
-                    data:result
-                })
-            }
-        })
+        let result = await  util.query(sql);
+        res.send(result);
     }
     
 })
 
 // 注册接口 
-router.get('/register',(req,res,next) => {
-    const { name, password } = req.query;
-    let sql = `INSERT INTO user values('${name}','${password}')` 
-    mysql.query(sql,(err,result) =>{
-        if(err){
-            res.send('插入失败')
-        }else {
-            res.send({
-                status:200,
-                data:'插入成功',
-            })
-        }
-    })
-
+router.post('/register',(req,res,next) => {
+    const { name, password } = req.body
+    let sql = `INSERT INTO user values('${name}','${password}')`;
+    let findSql = `select * from user where name = '${name}' `;
+    let result = await  util.query(findSql);
+    if(result.status ) {
+        let _inset = await  util.query(sql);
+        res.send (_inset);
+    }else {
+       res.send(result)
+    }
+    
+    
 })
+
 module.exports = router;

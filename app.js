@@ -2,8 +2,10 @@ let express=require("express");
 let app = express();
 let bodyParser = require('body-parser');
 const userRooter = require('./router/user');
-let mysql  = require('./mysql');
+const mockRooter = require('./router/mock');
+let mysql = require('./mysql');
 
+// 参数解析
 app.use(bodyParser.urlencoded({
   extended: true
 }))
