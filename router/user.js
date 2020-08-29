@@ -23,7 +23,7 @@ router.post('/login', async (req,res,next) => {
 })
 
 // 注册接口 
-router.post('/register',(req,res,next) => {
+router.post('/register',async (req,res,next) => {
     const { name, password } = req.body
     let sql = `INSERT INTO user values('${name}','${password}')`;
     let findSql = `select * from user where name = '${name}' `;
