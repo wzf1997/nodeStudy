@@ -1,6 +1,6 @@
 const express = require('express'); 
 const router = express.Router();
-const util = require('../utils');
+const util = require('./utils');
 // 用户唯一标识的id
 const uuid  = require('node-uuid');
 // 密码加密级别 
@@ -19,8 +19,7 @@ router.post('/login', async (req,res,next) => {
         let result = await  util.query(sql);
         res.send(result);
     }
-    
-})
+});
 
 // 注册接口 
 router.post('/register',async (req,res,next) => {
@@ -34,8 +33,6 @@ router.post('/register',async (req,res,next) => {
     }else {
        res.send(result)
     }
-    
-    
-})
+});
 
 module.exports = router;
