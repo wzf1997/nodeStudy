@@ -12,7 +12,7 @@ log4js.configure({
       httpLog: {
           type: 'dateFile',
           filename:'./log/http.log',
-          pattern: '-yyyy-MM-dd.log',// 输入的日志 以什么的模式
+          pattern: '-yyyy-MM-dd.log',// 输入的日志  每隔一小时就会新建一个文件夹。
           keepFileExt: true,
       },
       file: { type: 'file', filename: './log/cheese.log' }

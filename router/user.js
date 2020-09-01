@@ -4,6 +4,7 @@ const util = require('./utils');
 // 用户唯一标识的id
 const uuid  = require('node-uuid');
 const { consoleLog }  = require('../log');
+let jwt = require('jsonwebtoken');
 // 密码加密级别 
 let bcrypt = require('bcryptjs');
 let salt = bcrypt.genSaltSync(10); // 加密级别
@@ -16,10 +17,29 @@ router.post('/login', async (req,res,next) => {
     }else {
         const {name,password} = req.body
         let sql =  `select * from user where name = '${name}' `;
-        let res = await  util.query(sql);
-        if(res.status){
-            const { result } = res;
-            consoleLog.info(result, '查看userid -----');
+        let dataBaseres = await  util.query(sql);
+        if(dataBaseres.result.length > 0){
+            const { result } = dataBaseres;
+            const { password: pwd, name, userid } = result[0];
+            console.log(result[0], '999')
+            // 比较输入的密码 和 数据库中加密的密码
+            let isRight =  bcrypt.compareSync(password,pwd);
+            // 如果密码正确
+            if(isRight){
+               let token = jwt.sign({ userid, name}, 'wzf', {
+                   expiresIn: 60*2  // 2
+               })
+               res.send({
+                   code:'10010',
+                   data:'登录成功',
+                   token
+               });
+            }else {
+                res.send({
+                    code:'10100',
+                    data:'密码错误'
+                });
+            }
         }else{
             res.send({
                 data:'没有该用户'
@@ -31,10 +51,12 @@ router.post('/login', async (req,res,next) => {
 
 // 注册接口 
 router.post('/register',async (req,res,next) => {
-    const { name, password } = req.body
+    let { name, password } = req.body
+    console.log(name , '查看姓名')
     let findSql = `select * from user where name ='${name}' `;
     let result = await  util.query(findSql);
-    if(result.status) {
+    console.log(result)
+    if( result.length > 0) {
         res.send({
              data:'你已经注册，请登录！'
         });
@@ -46,8 +68,25 @@ router.post('/register',async (req,res,next) => {
         password = bcrypt.hashSync(password,salt);
         let sql = `INSERT INTO user values('${name}','${password}','${userid}')`;
         let _inset = await  util.query(sql);
-        res.send (_inset);
+        console.log(_inset,'9999')
+        if(_inset.status == 200){
+            res.send({
+                status:200,
+                code:'注册成功'
+            })
+        }else {
+            res.send({
+                status:404,
+                code:'注册失败',
+            })
+        }
+    
     }
 });
+router.get('/selcet', async(req,res)=> {
+    let findSql = `select * from user  `;
+    let result = await  util.query(findSql);
+    res.send(result);
+})
 
 module.exports = router;
