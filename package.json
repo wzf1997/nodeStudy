@@ -25,6 +25,7 @@
     "jsonwebtoken": "^8.5.1",
     "log4js": "^6.3.0",
     "mysql": "^2.18.1",
-    "node-uuid": "^1.4.8"
+    "node-uuid": "^1.4.8",
+    "redis": "^3.0.2"
   }
 }

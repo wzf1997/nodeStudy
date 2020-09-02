@@ -3,6 +3,7 @@ let app = express();
 let log4js = require('log4js');
 let jwt = require('jsonwebtoken');
 let bodyParser = require('body-parser');
+let redis = require('./redis');
 const userRooter = require('./router/user');
 const mockRooter = require('./router/mock');
 const { httpLog } = require('./log');
@@ -18,12 +19,13 @@ app.use(bodyParser.urlencoded({
 
 // 全部的路由匹配 
 
-app.use( (req,res,next) => {
+app.use( async (req,res,next) => {
     let urls = ['/user/login','/user/register'];
-    console.log(req.url)
+    redis.get()
     if(!urls.includes(req.url)) {
        let token = req.headers.token || req.query.token || req.body.token;
-       console.log(req, '999')
+       let redisRes =  await redis.get(`${token}`);
+       console.log(redisRes, '89898')
        if(token){
            jwt.verify(token, 'wzf', (err, decoded) => {
              if(err){

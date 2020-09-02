@@ -7,6 +7,7 @@ const { consoleLog }  = require('../log');
 let jwt = require('jsonwebtoken');
 // 密码加密级别 
 let bcrypt = require('bcryptjs');
+let redis = require('../redis');
 let salt = bcrypt.genSaltSync(10); // 加密级别
 
 
@@ -29,11 +30,14 @@ router.post('/login', async (req,res,next) => {
                let token = jwt.sign({ userid, name}, 'wzf', {
                    expiresIn: 60*2  // 2
                })
-               res.send({
-                   code:'10010',
-                   data:'登录成功',
-                   token
-               });
+               let redisResult  = await redis.set(`${token}`, `${name}`,2);
+               if(redisResult){
+                    res.send({
+                        code:'10010',
+                        data:'登录成功',
+                        token
+                    });
+               } 
             }else {
                 res.send({
                     code:'10100',
@@ -83,7 +87,7 @@ router.post('/register',async (req,res,next) => {
     
     }
 });
-router.get('/selcet', async(req,res)=> {
+router.post('/select', async(req,res)=> {
     let findSql = `select * from user  `;
     let result = await  util.query(findSql);
     res.send(result);
