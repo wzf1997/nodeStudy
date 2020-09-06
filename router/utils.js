@@ -1,5 +1,4 @@
 const mysql = require('../mysql'); 
-
 function query(sql) {
     return new Promise( (resolve,reject) => {
         mysql.query(sql, (err,result) =>{
@@ -11,6 +10,7 @@ function query(sql) {
         })
     })
 };
+
 let  util = {};
 util.query = query;
 module.exports = util;

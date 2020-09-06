@@ -17,6 +17,7 @@ router.post('/login', async (req,res,next) => {
         res.send({data:'数据没有填',status:'400'});
     }else {
         const {name,password} = req.body
+        console.log(name,password)
         let sql =  `select * from user where name = '${name}' `;
         let dataBaseres = await  util.query(sql);
         if(dataBaseres.result.length > 0){
@@ -72,7 +73,6 @@ router.post('/register',async (req,res,next) => {
         password = bcrypt.hashSync(password,salt);
         let sql = `INSERT INTO user values('${name}','${password}','${userid}')`;
         let _inset = await  util.query(sql);
-        console.log(_inset,'9999')
         if(_inset.status == 200){
             res.send({
                 status:200,

@@ -1,0 +1,74 @@
+[2020-09-01T21:59:40.736] [INFO] http - ::1 - - "GET /user/register HTTP/1.1" 404 152 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+[2020-09-01T21:59:55.143] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/register HTTP/1.1" 404 152 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+[2020-09-01T22:00:15.525] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/login HTTP/1.1" 404 149 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+[2020-09-01T22:00:23.560] [INFO] http - ::ffff:127.0.0.1 - - "GET /?/user/login HTTP/1.1" 404 139 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+[2020-09-01T22:04:23.514] [INFO] console - [] 查看userid -----
+[2020-09-01T22:05:46.770] [INFO] console - [] 查看userid -----
+[2020-09-01T22:06:07.561] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:09:21.778] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:11:04.445] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:11:49.748] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:14:55.727] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:16:42.733] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:16:49.015] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:18:05.389] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:36:30.734] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:36:49.013] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:37:19.956] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:40:59.260] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:41:15.013] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:42:16.331] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 41 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:42:42.896] [INFO] console - users_646b2df0-ec61-11ea-b760-933b31faaf12 查看userid -----
+[2020-09-01T22:43:04.682] [INFO] console - users_71677590-ec61-11ea-b6bc-8d2c2081a941 查看userid -----
+[2020-09-01T22:43:04.912] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 290 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:48:14.392] [INFO] console - users_2a019b80-ec62-11ea-bc59-83006527a8b1 查看userid -----
+[2020-09-01T22:48:14.661] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 151 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:53:18.136] [INFO] console - users_df0d1c70-ec62-11ea-a373-fbdcd6ccba53 查看userid -----
+[2020-09-01T22:53:18.404] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/register HTTP/1.1" 200 36 "" "PostmanRuntime/7.26.2"
+[2020-09-01T22:53:37.244] [INFO] console - [
+  RowDataPacket {
+    name: 'wzf',
+    password: '$2a$10$dLH581oAJWwfrds/OCF/R.75ai1DlX5Rzcj5wcbpQQndiCv5XtTWO',
+    userid: 'users_df0d1c70-ec62-11ea-a373-fbdcd6ccba53'
+  }
+] 查看userid -----
+[2020-09-01T22:54:57.930] [INFO] console - [] 查看userid -----
+[2020-09-01T23:11:18.404] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:20:01.687] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:22:04.814] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:22:25.233] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:22:41.216] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:22:45.649] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:23:17.622] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:23:45.372] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:27:12.902] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 46 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:27:32.742] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:47:35.568] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:48:08.793] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:48:53.413] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:49:53.094] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:50:18.911] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 404 151 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:51:20.248] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 404 151 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:51:26.035] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/select HTTP/1.1" 404 150 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:51:34.983] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/select HTTP/1.1" 404 150 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:52:23.634] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:52:43.887] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:53:04.491] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/select HTTP/1.1" 404 150 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:53:12.403] [INFO] http - ::ffff:127.0.0.1 - - "GET /user/select HTTP/1.1" 404 150 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:54:38.273] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 404 151 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:55:43.574] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:55:57.123] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-01T23:56:17.647] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 413 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:18:38.468] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:21:05.914] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:22:10.230] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:24:58.103] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:27:26.790] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:28:15.833] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/login HTTP/1.1" 200 266 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:28:33.749] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 413 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:29:13.716] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 413 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:30:09.537] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 413 "" "PostmanRuntime/7.26.2"
+[2020-09-02T23:45:20.863] [INFO] http - ::ffff:127.0.0.1 - - "POST /user/select HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-06T21:59:58.826] [INFO] http - ::ffff:127.0.0.1 - - "POST /article/detail HTTP/1.1" 200 48 "" "PostmanRuntime/7.26.2"
+[2020-09-06T22:06:30.093] [INFO] http - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 200 46 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+[2020-09-06T22:06:30.181] [INFO] http - ::ffff:127.0.0.1 - - "GET /favicon.ico HTTP/1.1" 200 46 "http://127.0.0.1:3030/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
