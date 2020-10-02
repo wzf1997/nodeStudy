@@ -13,6 +13,7 @@ let salt = bcrypt.genSaltSync(10); // 加密级别
 
 // 登录接口
 router.post('/login', async (req,res,next) => {
+    console.log(req.body, '走到这里了？')
     if(!req.body) { 
         res.send({data:'数据没有填',status:'400'});
     }else {
@@ -29,20 +30,22 @@ router.post('/login', async (req,res,next) => {
             // 如果密码正确
             if(isRight){
                let token = jwt.sign({ userid, name}, 'wzf', {
-                   expiresIn: 60*2  // 2
+                   expiresIn: 60*30  // 2
                })
                let redisResult  = await redis.set(`${token}`, `${name}`,2);
                if(redisResult){
                     res.send({
                         code:'10010',
                         data:'登录成功',
+                        success:true,
                         token
                     });
                } 
             }else {
                 res.send({
                     code:'10100',
-                    data:'密码错误'
+                    data:'密码错误',
+                    success:false,
                 });
             }
         }else{
