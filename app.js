@@ -41,11 +41,9 @@ const upload = multer({
 
 		},
 		// 修改上传文件的名字
-		// filename: function (req, file, cb) {
-
-		//     let  changedName = (new Date().getTime())+'-'+file.originalname;
-		//     cb(null, changedName);
-		// }
+		filename: function (req, file, cb) {
+			cb(null, file.originalname);
+		}
 	})
 });
 
@@ -75,7 +73,7 @@ app.use(async (req, res, next) => {
 		let redisRes = await redis.get(`${token}`).catch(err => {
 			console.log('chucuo l ?')
 		});
-		console.log(redisRes, '2')
+		console.log(redisRes, '2', token)
 		if (token) {
 			jwt.verify(token, 'wzf', (err, decoded) => {
 				if (err) {
@@ -85,12 +83,11 @@ app.use(async (req, res, next) => {
 					})
 				} else {
 					req.decoded = decoded
-					console.log('3')
 					next()
 				}
 			})
 		} else {
-			res.send({
+			return res.send({
 				code: '10109',
 				message: '没有找到token',
 			})
